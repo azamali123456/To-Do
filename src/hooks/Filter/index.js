@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./index.css";
 function Filter({ setFilter, setSearchQuery }) {
   const handleFilterChange = (e) => {
     setFilter(e.target.value);

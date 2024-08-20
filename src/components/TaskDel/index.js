@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./index.css";
 const TaskDel = ({ task, toggleComplete, deleteTask }) => {
   return (
     <div>
@@ -14,7 +14,9 @@ const TaskDel = ({ task, toggleComplete, deleteTask }) => {
         {task.description}
       </span>
       <span> | Priority: {task.priority}</span>
-      <button onClick={() => deleteTask(task.id)}>Delete</button>
+      <button class="button.delete" onClick={() => deleteTask(task.id)}>
+        Delete
+      </button>
     </div>
   );
 };

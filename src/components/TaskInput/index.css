@@ -8,7 +8,6 @@ input[type="text"] {
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
-  //next
   border-radius: 4px;
 }
 
@@ -31,4 +30,17 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+.button.delete {
+  background-color: #f44336; /* Red */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button.delete:hover {
+  background-color: #d32f2f; /* Darker Red */
 }

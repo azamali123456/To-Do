@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import "./TaskInput/index.css";
+import "./index.css";
 function TodoInput({ addTask }) {
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("Low");
@@ -32,7 +32,9 @@ function TodoInput({ addTask }) {
         <option value="Medium">Medium</option>
         <option value="High">High</option>
       </select>
-      <button type="submit">Add</button>
+      <button class="submit" type="submit">
+        Add
+      </button>
     </form>
   );
 }
