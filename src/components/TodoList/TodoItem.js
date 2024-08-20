@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./index.css";
 function TodoItem({ task, deleteTask, toggleComplete }) {
   return (
     <li style={{ textDecoration: task.completed ? "line-through" : "none" }}>
@@ -9,7 +9,9 @@ function TodoItem({ task, deleteTask, toggleComplete }) {
         onChange={() => toggleComplete(task.id)}
       />
       {task.description} - {task.priority}
-      <button onClick={() => deleteTask(task.id)}>Delete</button>
+      <button class=".button.delete" onClick={() => deleteTask(task.id)}>
+        Delete
+      </button>
     </li>
   );
 }
