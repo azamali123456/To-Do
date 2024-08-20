@@ -71,7 +71,9 @@ function App() {
         deleteTask={deleteTask}
         toggleComplete={toggleComplete}
       />
-      <button onClick={clearTasks}>Clear All Tasks</button>
+      <button className="clear-tasks" onClick={clearTasks}>
+        Clear All Tasks
+      </button>
     </div>
   );
 }
