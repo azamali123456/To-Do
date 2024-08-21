@@ -1,6 +1,7 @@
 body {
   background-color: #f5f5f5;
   font-family: Arial, sans-serif;
+  color: #333333;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -10,9 +11,12 @@ h1 {
   color: #333333;
 }
 
-/* Form and List Container */
+::marker {
+  background-color: #f5f5f5;
+  color: #f5f5f5;
+}
+
 form,
-ul,
 .filter-container {
   background-color: #ffffff;
   margin: 20px auto;
@@ -20,10 +24,19 @@ ul,
   border-radius: 8px;
   max-width: 500px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 31%;
+}
+
+ul {
+  background-color: #ffffff;
+  margin: 10px auto;
+  padding: 0.5px;
+  border-radius: 8px;
+  max-width: 530px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 50%;
 }
 
-/* Input Styles */
 input[type="text"],
 select {
   width: 100%;
@@ -32,40 +45,31 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.search {
-  width: 34%;
-  text-align: center;
-  text-align: center;
-  padding-left: 33%;
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
-/* Search Bar and Filter Styles */
 
 .filter-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
 }
 
+.filter-container:hover {
+  transform: scale(1.02);
+}
 .filter-container select,
 .filter-container input[type="text"] {
   width: 100%;
   margin: 10px;
-}
-
-.low-priority {
-  background-color: #2196f3;
-  color: #ffffff;
-}
-
-.medium-priority {
-  background-color: #ffeb3b;
-  color: #ffffff;
-}
-
-.high-priority {
-  background-color: #f44336;
-  color: #ffffff;
+  transition: background-color 0.3s ease;
 }
 
 .completed-task {
@@ -82,6 +86,7 @@ button {
   cursor: pointer;
   color: #ffffff;
   margin: 10px 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
 button.submit {
@@ -90,14 +95,19 @@ button.submit {
 
 button.submit:hover {
   background-color: #45a049;
+  transform: scale(1.05);
 }
 
 button.delete {
   background-color: #f44336;
+
+  margin-left: auto;
 }
 
 button.delete:hover {
   background-color: #d32f2f;
+  transform: scale(1.05);
+  margin-left: auto;
 }
 
 button.clear-tasks {
@@ -106,6 +116,16 @@ button.clear-tasks {
 
 button.clear-tasks:hover {
   background-color: #fb8c00;
+  transform: scale(1.05);
+}
+
+select {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+select:focus {
+  background-color: #e0e0e0;
+  transform: scale(1.02);
 }
 
 @media (max-width: 100px) {
@@ -121,6 +141,118 @@ button.clear-tasks:hover {
     max-width: 50%;
   }
 }
-ul {
-  background-color: white;
+.search {
+  width: 34%;
+  text-align: center;
+  text-align: center;
+  padding-left: 33%;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 25px;
+  background-color: #e7dfe5;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  width: 90%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul li input[type="checkbox"] {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+ul li button.delete {
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  transform: translateY(-50%);
+  background-color: #f44336;
+  border: none;
+  padding: 8px 12px;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+ul li button.delete:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+ul li .task-content {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul li input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #4caf50;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul li input[type="checkbox"]:checked {
+  background-color: #9ba39b;
+}
+
+ul li input[type="checkbox"]:checked::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+/* Position the priority bubble */
+ul li .priority-bubble {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background-color: #3f51b5; /* Default color */
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Colors based on priority */
+ul li.low-priority .priority-bubble {
+  background-color: #2196f3; /* Blue for Low priority */
+  color: #ffffff;
+}
+
+ul li.medium-priority .priority-bubble {
+  background-color: #ffeb3b; /* Yellow for Medium priority */
+  color: #000000;
+}
+
+ul li.high-priority .priority-bubble {
+  background-color: #f44336; /* Red for High priority */
+  color: #ffffff;
 }
