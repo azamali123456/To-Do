@@ -18,7 +18,7 @@ export const Pages = () => {
 
   return (
     <div>
-      <h1>To-Do List</h1>
+      <h1>TaskBubble </h1>
       <TodoInput addTask={addTask} />
       {FilterComponent}
       <TodoList

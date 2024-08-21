@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 function TodoInput({ addTask }) {
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("Low");
-  const notify = () => toast.error("Please add a task description.");
+  const notify = () => toast.error("Please add a Task");
   const handleSubmit = (e) => {
     e.preventDefault();
     if (description.trim()) {
@@ -41,7 +41,7 @@ function TodoInput({ addTask }) {
         </button>
       </form>
       <ToastContainer
-        position="top-center"
+        position="top-right"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
