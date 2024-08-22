@@ -1,5 +1,4 @@
 import React from "react";
-import "./index.css";
 function Filter({ setFilter, setSearchQuery }) {
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
@@ -7,7 +6,7 @@ function Filter({ setFilter, setSearchQuery }) {
 
   return (
     <div>
-      <select onChange={handleFilterChange}>
+      <select class="filter-container" onChange={handleFilterChange}>
         <option value="All">All Tasks</option>
         <option value="Completed">Completed Tasks</option>
         <option value="Incomplete">Incomplete Tasks</option>
@@ -15,11 +14,13 @@ function Filter({ setFilter, setSearchQuery }) {
         <option value="Medium">Medium Priority</option>
         <option value="High">High Priority</option>
       </select>
-      <input
-        type="text"
-        placeholder="Search tasks..."
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
+      <div class="search">
+        <input
+          type="text"
+          placeholder="Search tasks..."
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
     </div>
   );
 }

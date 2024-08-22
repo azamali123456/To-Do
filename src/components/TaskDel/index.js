@@ -1,20 +1,22 @@
 import React from "react";
-import "./index.css";
+
 const TaskDel = ({ task, toggleComplete, deleteTask }) => {
   return (
-    <div>
+    <div
+      className={`task ${
+        task.completed
+          ? "completed-task"
+          : task.priority.toLowerCase() + "-priority"
+      }`}
+    >
       <input
         type="checkbox"
         checked={task.completed}
         onChange={() => toggleComplete(task.id)}
       />
-      <span
-        style={{ textDecoration: task.completed ? "line-through" : "none" }}
-      >
-        {task.description}
-      </span>
+      <span>{task.description}</span>
       <span> | Priority: {task.priority}</span>
-      <button class="button.delete" onClick={() => deleteTask(task.id)}>
+      <button className="delete" onClick={() => deleteTask(task.id)}>
         Delete
       </button>
     </div>

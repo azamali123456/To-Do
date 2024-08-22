@@ -1,17 +1,27 @@
 import React from "react";
-import "./index.css";
+
 function TodoItem({ task, deleteTask, toggleComplete }) {
   return (
-    <li style={{ textDecoration: task.completed ? "line-through" : "none" }}>
-      <input
-        type="checkbox"
-        checked={task.completed}
-        onChange={() => toggleComplete(task.id)}
-      />
-      {task.description} - {task.priority}
-      <button class=".button.delete" onClick={() => deleteTask(task.id)}>
-        Delete
-      </button>
+    <li
+      style={{ textDecoration: task.completed ? "line-through" : "none" }}
+      className={`task ${
+        task.completed
+          ? "completed-task"
+          : task.priority.toLowerCase() + "-priority"
+      }`}
+    >
+      <div className="todo-item-container">
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={() => toggleComplete(task.id)}
+        />
+        <span className="task-content">{task.description}</span>
+        <span className="priority-bubble">{task.priority}</span>
+        <button className="delete" onClick={() => deleteTask(task.id)}>
+          Delete
+        </button>
+      </div>
     </li>
   );
 }
