@@ -22,7 +22,9 @@ const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: ${(props) => props.theme.borderRadius};
   box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:focus {
     border-color: ${(props) => props.theme.colors.buttonSubmit};
@@ -37,7 +39,9 @@ const Select = styled.select`
   border: 1px solid #ccc;
   border-radius: ${(props) => props.theme.borderRadius};
   box-sizing: border-box;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
   background-color: #ffffff;
 
   &:focus {
@@ -56,7 +60,9 @@ const SubmitButton = styled.button`
   color: #ffffff;
   background-color: ${(props) => props.theme.colors.buttonSubmit};
   margin: ${(props) => props.theme.spacing.small} 0;
-  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease-in-out;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.buttonSubmitHover};

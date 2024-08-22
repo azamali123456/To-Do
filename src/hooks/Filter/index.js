@@ -18,7 +18,9 @@ const FilterSelect = styled.select`
   border: 1px solid #ccc;
   border-radius: ${(props) => props.theme.borderRadius};
   box-sizing: border-box;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
   background-color: #ffffff;
 
   &:focus {
@@ -35,7 +37,9 @@ const SearchInput = styled.input`
   border: 1px solid #ccc;
   border-radius: ${(props) => props.theme.borderRadius};
   box-sizing: border-box;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
   background-color: #ffffff;
 
   &:focus {

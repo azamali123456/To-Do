@@ -94,7 +94,9 @@ const DeleteButton = styled.button`
   color: #ffffff;
   border-radius: ${(props) => props.theme.borderRadius};
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease-in-out;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.buttonDeleteHover};

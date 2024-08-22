@@ -40,8 +40,8 @@ export const useTodoApp = () => {
   const toggleComplete = (id) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
     );
   };
 
@@ -54,7 +54,7 @@ export const useTodoApp = () => {
       return true;
     })
     .filter((task) =>
-      task.description.toLowerCase().includes(searchQuery.toLowerCase())
+      task.description.toLowerCase().includes(searchQuery.toLowerCase()),
     );
 
   return {
