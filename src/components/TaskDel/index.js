@@ -1,14 +1,13 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
 const TaskDel = ({ task, toggleComplete, deleteTask }) => {
+  const taskClass = task.completed
+    ? "completed-task"
+    : `${task.priority.toLowerCase()}-priority`;
+
   return (
-    <div
-      className={`task ${
-        task.completed
-          ? "completed-task"
-          : task.priority.toLowerCase() + "-priority"
-      }`}
-    >
+    <div className={taskClass}>
       <input
         type="checkbox"
         checked={task.completed}

@@ -1,7 +1,10 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useTodoApp } from "../components/index.js";
 import { useFilter } from "../hooks/index.js";
 
-export const Pages = () => {
+import "../globalCSS/index.css";
+
+const Pages = () => {
   const {
     TodoInput,
     TodoList,
@@ -17,8 +20,9 @@ export const Pages = () => {
   const FilterComponent = useFilter({ setFilter, setSearchQuery });
 
   return (
-    <div>
-      <h1>TaskBubble </h1>
+    // eslint-disable-next-line react/react-in-jsx-scope
+    <div className="container">
+      <h1>TaskBubble</h1>
       <TodoInput addTask={addTask} />
       {FilterComponent}
       <TodoList
@@ -32,3 +36,4 @@ export const Pages = () => {
     </div>
   );
 };
+export default Pages;

@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import TodoItem from "./TodoItem.js";
+import TodoItem from "./TodoItem";
 
 function TodoList({ tasks, deleteTask, toggleComplete }) {
   return (
