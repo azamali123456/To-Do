@@ -3,19 +3,19 @@
 TaskBubble is a modern and interactive Todo List application built with React. The application allows users to manage their tasks efficiently by providing functionalities to add, edit, delete, and filter tasks based on their completion status and priority levels. The application also features a customizable theme and responsive design for a seamless user experience across different devices.
 
 ## Features:
-- ![🆕 Add Task]:
+- 🆕 Add Task:
 Create new tasks with descriptions and priority levels (Low, Medium, High).
 
-- [![✏️ Edit Tasks]()]():
+- ✏️ Edit Tasks:
 Update task statuses by marking them as completed or incomplete.
 
-- [![🗑️ Delete Tasks]()]():
+- 🗑️ Delete Tasks:
 Remove tasks from the list.
 
-- [![🔍 Filter Tasks]()]():
+- 🔍 Filter Tasks:
 View tasks based on their completion status or priority level.
 
-- [![🔎 Search Tasks]()]():
+- 🔎 Search Tasks:
 Search through tasks by description.
 
 ## Responsive Design:
