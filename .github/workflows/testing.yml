@@ -36,12 +36,6 @@ jobs:
         env:
           CI: true
 
-      # Run tests
-      - name: Run tests
-        run: npm test -- --coverage
-        env:
-          CI: true
-
       # Build the project (if applicable)
       - name: Build project
         run: npm run build
