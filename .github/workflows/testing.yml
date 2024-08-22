@@ -1,0 +1,52 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Specify the Node.js version you use
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+        env:
+          CI: true
+
+      # Run linting
+      - name: Run ESLint
+        run: npm run lint
+        env:
+          CI: true
+
+      # Run tests
+      - name: Run tests
+        run: npm test -- --coverage
+        env:
+          CI: true
+
+      # Build the project (if applicable)
+      - name: Build project
+        run: npm run build
+        env:
+          CI: true
+
+      # Optionally, you can add more steps for deployment or other actions here
+
