@@ -1,9 +1,14 @@
 import React from "react";
-import { Pages } from "./Pages/index.js";
-import "./globalCSS/index.css";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme.js";
+import Pages from "./Pages/index.js";
 
 function App() {
-  return <Pages />;
+  return (
+    <ThemeProvider theme={theme}>
+      <Pages />
+    </ThemeProvider>
+  );
 }
 
 export default App;
