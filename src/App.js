@@ -3,7 +3,10 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./theme.js";
 import Pages from "./Pages/index.js";
 
+
 function App() {
+
+  const exmap ='ZAINAB';
   return (
     <ThemeProvider theme={theme}>
       <Pages />
