@@ -14,7 +14,7 @@
   --low-priority-color: #2196f3;
   --medium-priority-color: #ffeb3b;
   --high-priority-color: #f44336;
-  --input-focus-color: #4caf50;
+  --input-focus-color: black;
   --checkbox-checked-color: #9ba39b;
   --checkbox-checked-before-color: #ffffff;
   --border-radius: 8px;
@@ -66,10 +66,10 @@ ul {
   margin: var(--margin) auto;
   padding: var(--ul-padding);
   border-radius: var(--border-radius);
-  max-width: 510px;
+  max-width: 525px;
   width: 100%;
   list-style-type: none;
-  padding-left: 0%;
+  padding-left: -00002%;
 }
 
 ul li {
@@ -79,6 +79,7 @@ ul li {
   position: relative;
   padding-left: 1px;
   background-color: white;
+  padding-left: -00001%;
   margin-bottom: var(--margin);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -175,7 +176,7 @@ select {
 input[type="text"]:focus,
 select:focus {
   border-color: var(--input-focus-color);
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  box-shadow: 0 0 5px black;
 }
 
 select {

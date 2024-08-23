@@ -6,7 +6,6 @@ import Pages from "./Pages/index.js";
 
 function App() {
 
-  const exmap ='ZAINAB';
   return (
     <ThemeProvider theme={theme}>
       <Pages />

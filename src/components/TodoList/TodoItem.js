@@ -5,7 +5,6 @@ import styled from "styled-components";
 const ListItem = styled.li`
   display: flex;
   align-items: center;
-  justify-content: center;
   position: relative;
   padding: ${(props) => props.theme.spacing.medium};
   background-color: ${(props) =>
@@ -32,10 +31,7 @@ const CheckBox = styled.input`
   background-color: ${(props) =>
     props.checked ? props.theme.colors.buttonSubmit : "#ffffff"};
   cursor: pointer;
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-right: ${(props) => props.theme.spacing.small};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,18 +48,19 @@ const CheckBox = styled.input`
 
 const TaskContent = styled.span`
   flex-grow: 1;
-  text-align: center;
-  margin: 0 60px;
-  display: flex;
+  text-align: left; /* Align text to the left */
+  margin-left:110px;
+  margin-right: ${(props) => props.theme.spacing.medium}; /* Space for the bubble and button */
   align-items: center;
   justify-content: center;
 `;
 
 const PriorityBubble = styled.span`
   position: absolute;
-  top: -10px;
-  right: -10px;
-  padding: 5px 10px;
+  right: 180px; /* Space for delete button */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  padding: 4px 8px;
   border-radius: 12px;
   background-color: ${(props) => {
     switch (props.priority) {
@@ -81,26 +78,27 @@ const PriorityBubble = styled.span`
   font-size: 12px;
   font-weight: bold;
   display: inline-block;
+  white-space: nowrap; /* Ensure the text doesn't break */
 `;
 
 const DeleteButton = styled.button`
   position: absolute;
-  right: 10px;
-  top: 30%;
-  transform: translateY(-50%);
+  right: 10px; /* Adjust for space between button and edge */
+  top: 10%;
+  transform: translateY(-1%); /* Center vertically */
   background-color: ${(props) => props.theme.colors.buttonDelete};
   border: none;
-  padding: 8px 12px;
+  padding: 8px 12px; /* Adjusted for better fit */
   color: #ffffff;
   border-radius: ${(props) => props.theme.borderRadius};
   cursor: pointer;
   transition:
-    background-color 0.3s ease,
-    transform 0.2s ease-in-out;
+    background-color 0.1s ease,
+    transform 0.1s ease-in-out;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.buttonDeleteHover};
-    transform: scale(1.05);
+    transform: scale(1.05); 
   }
 `;
 
