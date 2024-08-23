@@ -1,3 +1,4 @@
+
 /* eslint-disable react/prop-types */
 import React from "react";
 import styled from "styled-components";
@@ -15,7 +16,7 @@ const ListItem = styled.li`
     props.completed
       ? props.theme.colors.taskCompletedTextColor
       : props.theme.colors.taskIncompleteTextColor};
-  margin-bottom: ${(props) => props.theme.spacing.small};
+  margin-bottom: 20px;
   border-radius: ${(props) => props.theme.borderRadius};
   width: 96%;
   box-shadow: ${(props) => props.theme.boxShadow};
@@ -49,7 +50,7 @@ const CheckBox = styled.input`
 const TaskContent = styled.span`
   flex-grow: 1;
   text-align: left; /* Align text to the left */
-  margin-left:110px;
+  margin-left:10px;
   margin-right: ${(props) => props.theme.spacing.medium}; /* Space for the bubble and button */
   align-items: center;
   justify-content: center;
@@ -57,8 +58,9 @@ const TaskContent = styled.span`
 
 const PriorityBubble = styled.span`
   position: absolute;
-  right: 180px; /* Space for delete button */
-  top: 50%;
+ 
+  right: -8px;
+    top: 0.8%;
   transform: translateY(-50%); /* Center vertically */
   padding: 4px 8px;
   border-radius: 12px;

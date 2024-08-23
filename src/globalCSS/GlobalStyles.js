@@ -38,6 +38,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     list-style: none;
   }
+    
 
   input[type="text"], select {
     width: calc(100% - 22px);
@@ -70,6 +71,7 @@ const GlobalStyles = createGlobalStyle`
     justify-content: center;
     position: relative;
     padding: 15px;
+    
     background-color: ${({ theme }) => theme.colors.background.secondary};
     margin-bottom: 10px;
     border-radius: 8px;
