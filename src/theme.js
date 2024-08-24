@@ -14,7 +14,7 @@ export const theme = {
     taskIncompleteTextColor: "black",
   },
 
-  borderRadius: "4px",
+  borderRadius: "8px",
   spacing: {
     small: "10px",
     medium: "20px",
